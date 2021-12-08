@@ -9,7 +9,7 @@ import time
 
 class lane_following:
     def __init__(self):
-        self.image_lane_sub = rospy.Subscriber('/camera/image_projected/compressed', CompressedImage, self.callback, queue_size = 1)
+        self.image_lane_sub = rospy.Subscriber('/camera/image_projected/compressed', CompressedImage, self.callback, queue_size = 1, buff_size=2**24)
         self.detect_midlane_pub = rospy.Publisher('/camera/midlane_detected/compressed', CompressedImage, queue_size = 1)
         # self.detect_white_lane_pub = rospy.Publisher('/camera/yellow_lane_detected/compressed', CompressedImage, queue_size = 1)
         self.pub_lane = rospy.Publisher('/detect/lane', Float64, queue_size = 1)
@@ -46,7 +46,7 @@ class lane_following:
         # Create an output image to draw on and  visualize the result
         out_img = np.dstack((warped, warped, warped))*255
         # Choose the number of sliding windows
-        nwindows = 5
+        nwindows = 10
         # Set height of windows
         window_height = np.int(warped.shape[0]/nwindows)
         # Identify the x and y positions of all nonzero pixels in the image
@@ -114,10 +114,11 @@ class lane_following:
         # left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]
         right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]
         
-        cx, cy, _, _ = getPerpCoord(right_fitx[299], 299, right_fitx[301], 301, 215)
+        cx, cy, _, _ = getPerpCoord(right_fitx[300], 300, right_fitx[301], 301, 250)
 
         img = cv2.circle(img, (cx,cy), radius=10, color=(0, 0, 255), thickness=-1)
-
+        # img = cv2.circle(img, (int(right_fitx[350])-230,350), radius=10, color=(0, 255, 0), thickness=-1)
+        # cx = int(right_fitx[350])-230
         msg_desired_center = Float64()
         msg_desired_center.data = cx
         self.pub_lane.publish(msg_desired_center)
