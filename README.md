@@ -32,11 +32,11 @@ Install [camera calibration](http://wiki.ros.org/camera_calibration) package if 
 
     $ roscore
 
-  2. Next launch raspberry pi camera:
+  2. Next launch raspberry pi camera on `SBC`:
 
     $ roslaunch turtlebot3_lane_following turtlebot3_camera_pi.launch
 
-  3. Then launch camera calibrator:
+  3. Then launch camera calibrator on `Remote PC`:
 
     $ rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 image:=/my_camera/image camera:=/my_camera
 
