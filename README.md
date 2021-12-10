@@ -1,7 +1,7 @@
 
 # TurtleBot3 Lane Following
 
-Lane tracking and controlling using perception. The lane is from TurtleBot3 autorace mission consists of yellow lane on the left and white lane on the right
+Lane tracking and controlling using perception. The lane is from TurtleBot3 autorace mission consists of yellow lane on the left and white lane on the right.
 
 ## Prerequisites
 
