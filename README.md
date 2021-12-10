@@ -5,6 +5,8 @@ Lane tracking and controlling using perception. The lane is from TurtleBot3 auto
 
 ## Prerequisites
 
+- TurtleBot3
+
 - [ROS Melodic & TurtleBot3 ROS packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)
 
 ## Install
