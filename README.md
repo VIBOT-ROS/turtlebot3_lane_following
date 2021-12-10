@@ -28,11 +28,12 @@ To run the lane following, first thing is to calibrate the camera on TurtleBot3.
 Install [camera calibration](http://wiki.ros.org/camera_calibration) package if haven't installed yet.
 
   1. First launch roscore on `Remote PC`:
-
     $ roscore
 
-  2. Then launch camera calibrator
+  2. Next launch raspberry pi camera
+    $ roslaunch turtlebot3_lane_following turtlebot3_camera_pi.launch
 
+  3. Then launch camera calibrator
     $ rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 image:=/my_camera/image camera:=/my_camera
 
-3. Copy and paste the data inside the **ost.yaml** to **camerav2_320x240_30fps.yaml**
+  4. Copy and paste the data inside the **ost.yaml** to **camerav2_320x240_30fps.yaml**
