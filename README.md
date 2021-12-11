@@ -1,6 +1,11 @@
 
 # TurtleBot3 Lane Following
 
+![](https://img.shields.io/badge/Python-2.7-yellow)
+![](https://img.shields.io/badge/ROS-melodic-blue)
+![](https://img.shields.io/badge/Ubuntu-18.04-orange)
+![](https://img.shields.io/badge/OpenCV-3.2-red)
+
 Lane tracking and controlling using perception. The lane is from TurtleBot3 autorace mission consists of yellow lane on the left and white lane on the right.
 
 ## Prerequisites
