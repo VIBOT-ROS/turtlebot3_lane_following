@@ -14,7 +14,7 @@ Lane tracking and controlling using perception. The lane is from TurtleBot3 auto
 
 - [ROS Melodic & TurtleBot3 ROS packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)
 
-## Install
+## Installation
 
 Open the terminal and run command below to download and install on `Remote PC` and `SBC`. If [TurtleBot3 AutoRace 2020 metapackage](https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020) branch kinetic is installed, skip it:
 
@@ -27,11 +27,11 @@ Install additional dependent packages on `Remote PC`:
 
     $ sudo apt-get install ros-melodic-image-transport ros-melodic-cv-bridge ros-melodic-vision-opencv python-opencv libopencv-dev ros-melodic-image-proc
 
-## Run
+## Calibration
 
 To run the lane following, first thing is to calibrate the camera on TurtleBot3. The raspicam_node package is used. Execute below on the terminal
 
-### Camera Calibration
+#### Camera Calibration
 
 Install [camera calibration](http://wiki.ros.org/camera_calibration) package if haven't installed yet.
 
@@ -52,3 +52,13 @@ Install [camera calibration](http://wiki.ros.org/camera_calibration) package if 
   5. Closed camera calibration node & raspberry pi camera node by `ctrl-c`.
 
   6. Relaunch raspberry pi camera to apply rectification or undistort image.
+
+#### Lane Detection Calibration
+
+The lane detection needs to be adjust or tuning in order to detect both lanes.
+
+## One Launch to run all the nodes
+
+Launch one to rule them all
+
+
