@@ -113,7 +113,7 @@ Launch on `SBC`:
 
 ## One Launch to run all the nodes
 
-Intended to simplified the process after finish calibration. Launch one to run them all on `Remote Pc`:
+Intended to simplified the process after finish calibration. Launch one to run all the nodes on `Remote Pc`:
 
     $ roslaunch turtlebot3_lane_following one_ring_to_rule_them_all.launch
 
