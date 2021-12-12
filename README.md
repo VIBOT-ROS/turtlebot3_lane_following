@@ -23,7 +23,7 @@ Open the terminal and run command below to download and install on `Remote PC` a
     cd ~/catkin_ws/src/
     git clone -b kinetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020.git
     git clone https://github.com/VIBOT-ROS/turtlebot3_lane_following.git
-    cd ~/catkin_ws/turtlebot3_lane_following/scripts/ && chmod +x * && cd ~/catkin_ws && catkin_make
+    cd ~/catkin_ws/src/turtlebot3_lane_following/scripts/ && chmod +x * && cd ~/catkin_ws && catkin_make
 
 Install additional dependent packages on `Remote PC`:
 
