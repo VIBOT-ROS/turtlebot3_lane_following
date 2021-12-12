@@ -49,7 +49,7 @@ Install [camera calibration](http://wiki.ros.org/camera_calibration) package if 
 
     rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 image:=/camera/image camera:=/camera
 
-  4. After finish calibration. Go to **/tmp/calibrationdata.tar.gz** and extract. Copy and paste the `data` inside the **ost.yaml** to **/home/pc_username/catkin_ws/src/turtlebot3_lane_following/calibration/intrinsic_clibration/camerav2_320x240_30fps.yaml**
+  4. After finish calibration. Go to **/tmp/calibrationdata.tar.gz** and extract. Copy and paste the `data` inside the **ost.yaml** to **/home/pc_username/catkin_ws/src/turtlebot3_lane_following/calibration/intrinsic_calibration/camerav2_320x240_30fps.yaml**
 
   5. Closed the camera calibration node & raspberry pi camera node by `ctrl-c`.
 
