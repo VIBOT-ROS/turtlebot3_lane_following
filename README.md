@@ -90,7 +90,7 @@ The PD controller were implemented since is most suitable. Below is derivative f
   
   Derived of PD controller:
 
-  <img src="https://latex.codecogs.com/svg.image?\frac{\mathrm{d}&space;u(t)}{\mathrm{d}&space;t}=K_{p}*\frac{\mathrm{d}&space;e(t)}{\mathrm{d}&space;t}&plus;K_{d}*\frac{\mathrm{d}^2e(t)&space;}{\mathrm{d}&space;t^2t" title="\frac{\mathrm{d} u(t)}{\mathrm{d} t}=K_{p}*\frac{\mathrm{d} e(t)}{\mathrm{d} t}+K_{d}*\frac{\mathrm{d}^2e(t) }{\mathrm{d} t^2" />
+  <img src="https://latex.codecogs.com/svg.image?\frac{\mathrm{d}&space;u(t)}{\mathrm{d}&space;t}=K_{p}*\frac{\mathrm{d}&space;e(t)}{\mathrm{d}&space;t}&plus;K_{d}*\frac{\mathrm{d}^2e(t)&space;}{\mathrm{d}&space;t^2" title="\frac{\mathrm{d} u(t)}{\mathrm{d} t}=K_{p}*\frac{\mathrm{d} e(t)}{\mathrm{d} t}+K_{d}*\frac{\mathrm{d}^2e(t) }{\mathrm{d} t^2" />
   
   Convert to numerical:
   
