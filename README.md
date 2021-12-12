@@ -111,7 +111,7 @@ Launch on `SBC`:
 
     roslaunch turtlebot_bringup turtlebot3_robot.launch
 
-## One Launch to run all the nodes
+## Launch all the nodes
 
 Intended to simplified the process after finish calibration. Launch one to run all the nodes on `Remote Pc`:
 
