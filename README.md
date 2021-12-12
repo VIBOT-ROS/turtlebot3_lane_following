@@ -100,7 +100,7 @@ The PD controller were implemented since is most suitable. Below is derivative f
   
   <img src="https://latex.codecogs.com/svg.image?u[k]=u[k-1]&plus;K_{p}*(e[k]-e[k-1])&plus;K_{d}*(\frac{e[k]-2*e[k-1]&plus;e[k-2]}{\Delta&space;t})" title="u[k]=u[k-1]+K_{p}*(e[k]-e[k-1])+K_{d}*(\frac{e[k]-2*e[k-1]+e[k-2]}{\Delta t})" />
   
-  This the approximate which is implement in the code:
+  This the approximate which is implemented in the code:
   
   <img src="https://latex.codecogs.com/svg.image?u[k]\approx&space;u[k-1]&plus;K_{p}*(e[k]-e[k-1])&plus;K_{d}*(e[k]-2*e[k-1]&plus;e[k-2])" title="u[k]\approx u[k-1]+K_{p}*(e[k]-e[k-1])+K_{d}*(e[k]-2*e[k-1]+e[k-2])" />
   
