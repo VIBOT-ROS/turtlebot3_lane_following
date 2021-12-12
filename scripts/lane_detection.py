@@ -31,7 +31,6 @@ class lane_following:
         # gray = self.filter.update(gray)
 
         # create a binary thresholded image on grayscale image between white and yellow
-
         thresh = cv2.inRange(gray, 190, 255)
         
         warped = thresh

@@ -9,10 +9,11 @@
             password="napelturbot"
             env-loader="$(find turtlebot3_lane_following)/scripts/bringup.sh"
             default="never"
-  /machine>
-
+            />
+            
   <!-- camera -->
   <include machine="turtlebot3" file="$(find turtlebot_lane_following)/launch/turtlebot3_camera_pi.launch"/>
+
   <!-- camera intrinsic -->
   <include file="$(find turtlebot_lane_following)/launch/turtlebot3_intrinsic_camera_calibration.launch"/>
 
