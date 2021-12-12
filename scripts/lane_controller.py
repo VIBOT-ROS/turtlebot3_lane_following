@@ -3,28 +3,7 @@
 import rospy
 from std_msgs.msg import Float64
 from geometry_msgs.msg import Twist
-import sys, select, tty, termios
-
-def getKey():
-    tty.setraw(sys.stdin.fileno())
-    rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
-    if rlist:
-        key = sys.stdin.read(1)
-    else:
-        key = ''
-
-    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
-    return key
-
-def getch():
-    # fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(sys.stdin.fileno())
-    try:
-        tty.setraw(sys.stdin.fileno())
-        ch = sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
-        return ch
+import sys, tty, termios
 
 msg = """
 Lane Following Menu
@@ -36,6 +15,15 @@ space key or s
 CTRL-C to quit
 """
 
+def getKey():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(fd)
+        key = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
+        return key
 
 class ControlLane():
     def __init__(self):
@@ -57,9 +45,8 @@ class ControlLane():
         self.MAX_VEL = max_vel_msg.data
 
     def cbFollowLane(self, desired_center):
-        # print(getch())
-        key = getch()
-        if key == ' ' or key == 's' :
+        key = getKey()
+        if key == ' ' or key == 's':
             self.run = not self.run
 
         if self.status == 20 :
@@ -91,7 +78,6 @@ class ControlLane():
             self.status +=  1
 
         elif key == '\x03':
-            # print(key)
             rospy.signal_shutdown('ctrl-c is pressed. Quitting now')
                   
 
