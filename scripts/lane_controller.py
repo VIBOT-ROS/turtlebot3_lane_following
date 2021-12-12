@@ -10,11 +10,11 @@ class ControlLane():
         self.sub_lane = rospy.Subscriber('/detect/lane', Float64, self.cbFollowLane, queue_size = 1)
         self.sub_max_vel = rospy.Subscriber('/control/max_vel', Float64, self.cbGetMaxVel, queue_size = 1)
         self.pub_cmd_vel = rospy.Publisher('/cmd_vel', Twist, queue_size = 1)
-
+        
         self.lastError = 0
-	self.prevError = 0
-	self.angular_z = 0
-        self.MAX_VEL = 0.14
+        self.prevError = 0
+        self.angular_z = 0
+        self.MAX_VEL = 0.2
 
         rospy.on_shutdown(self.fnShutDown)
 
@@ -22,6 +22,7 @@ class ControlLane():
         self.MAX_VEL = max_vel_msg.data
 
     def cbFollowLane(self, desired_center):
+
         center = desired_center.data
 
         error = center - 500
@@ -30,8 +31,8 @@ class ControlLane():
         Kd = 0.0005
 
         self.angular_z += Kp * (error - self.lastError) + Kd * (error - 2 * self.prevError + self.lastError)
-	self.prevError = self.lastError
-	self.lastError = error
+        self.prevError = self.lastError
+        self.lastError = error
         twist = Twist()
         twist.linear.x = 0.1        
         twist.linear.y = 0
@@ -58,5 +59,6 @@ class ControlLane():
 
 if __name__ == '__main__':
     rospy.init_node('control_lane')
+    rospy.loginfo('lane following controller is running')
     node = ControlLane()
     node.main()

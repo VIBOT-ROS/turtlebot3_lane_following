@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- launch all the launch or nodes including robot bring up-->
+
+  <!-- Establish SSH connection with turtlebot3 SBC-->
+  <machine  name="turtlebot3" 
+            user="ubuntu" 
+            address="192.168.0.200" 
+            password="napelturbot"
+            env-loader="$(find turtlebot3_lane_following)/scripts/bringup.sh"
+            default="never"
+  /machine>
+
+  <!-- camera -->
+  <include machine="turtlebot3" file="$(find turtlebot_lane_following)/launch/turtlebot3_camera_pi.launch"/>
+  <!-- camera intrinsic -->
+  <include file="$(find turtlebot_lane_following)/launch/turtlebot3_intrinsic_camera_calibration.launch"/>
+
+  <!-- camera extrinsic -->
+  <include file="$(find turtlebot_lane_following)/launch/turtlebot3_extrinsic_camera_calibration.launch"/>
+
+  <!-- lane detection -->
+  <include file="$(find turtlebot_lane_following)/launch/turtlebot3_lane_detection.launch"/>
+
+  <!-- lane controller -->
+  <include file="$(find turtlebot_lane_following)/launch/turtlebot3_lane_controller.launch"/>
+
+  <!-- remote bringup -->
+  <include machine="turtlebot3" file="$(find turtlebot_bringup)/launch/turtlebot3_robot.launch"/>
+
+</launch>
