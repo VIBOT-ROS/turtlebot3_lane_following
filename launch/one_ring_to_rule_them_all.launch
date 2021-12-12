@@ -2,7 +2,7 @@
 <launch>
   <!-- launch all the launch or nodes including robot bring up-->
 
-  <!-- Establish SSH connection with turtlebot3 SBC-->
+  <!-- SSH connection with turtlebot3 SBC-->
   <machine  name="turtlebot3" 
             user="ubuntu" 
             address="192.168.0.200" 
