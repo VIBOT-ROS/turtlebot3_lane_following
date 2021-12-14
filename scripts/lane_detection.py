@@ -201,7 +201,7 @@ def getPerpCoord(aX, aY, bX, bY, length):
     return int(cX), int(cY), int(dX), int(dY)
 
 def main():
-    rospy.init_node('lane_detection', anonymous=True)
+    rospy.init_node('lane_detection')
     rospy.loginfo('Lane detection is running')
     lane_following()
     rospy.spin()
