@@ -122,7 +122,7 @@ class lane_following:
         
         
         if leftx_base < 100 and rightx_base > 600:
-            cx, cy, _, _ = getPerpCoord(right_fitx[300], 300, right_fitx[301], 301, 260)
+            cx, cy, _, _ = getPerpCoord(right_fitx[300], 300, right_fitx[301], 301, 255)
             img = cv2.circle(img, (cx,cy), radius=10, color=(0, 0, 255), thickness=-1)
             right_lane=np.array([np.transpose(np.vstack([right_fitx, ploty]))])
             final = cv2.polylines(img, np.int_([right_lane]), isClosed=False, color=(255, 255, 255), thickness=24)
@@ -132,7 +132,7 @@ class lane_following:
                 self.log_status = 'right'
 
         elif leftx_base > 100 and rightx_base < 600:
-            cx, cy, _, _ = getPerpCoord(left_fitx[300], 300, left_fitx[301], 301, -260)
+            cx, cy, _, _ = getPerpCoord(left_fitx[300], 300, left_fitx[301], 301, -255)
             img = cv2.circle(img, (cx,cy), radius=10, color=(0, 0, 255), thickness=-1)
             left_lane=np.array([np.transpose(np.vstack([left_fitx, ploty]))])
             final = cv2.polylines(img, np.int_([left_lane]), isClosed=False, color=(0, 255, 255), thickness=24)

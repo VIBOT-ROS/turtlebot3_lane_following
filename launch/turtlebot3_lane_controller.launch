@@ -2,6 +2,6 @@
   <!-- launch turtlebot3_lane_detection.launch before launch this file -->
 
   <!-- lane control -->
-  <node pkg="turtlebot3_lane_following" type="lane_controller.py" name="lane_controller" output="screen"/>
+  <node pkg="turtlebot3_lane_following" type="lane_controller_no_menu.py" name="lane_controller" output="screen"/>
 
 </launch>
