@@ -3,7 +3,7 @@
   <!-- launch all the launch or nodes including robot bring up-->
 
   <!-- SSH connection with turtlebot3 SBC-->
-  <machine  name="turtlebot3" 
+  <machine  name="ubuntu" 
             user="ubuntu" 
             address="192.168.0.200" 
             password="napelturbot"
@@ -12,7 +12,7 @@
             />
             
   <!-- camera -->
-  <include machine="turtlebot3" file="$(find turtlebot_lane_following)/launch/turtlebot3_camera_pi.launch"/>
+  <include machine="ubuntu" file="$(find turtlebot_lane_following)/launch/turtlebot3_camera_pi.launch"/>
 
   <!-- camera intrinsic -->
   <include file="$(find turtlebot_lane_following)/launch/turtlebot3_intrinsic_camera_calibration.launch"/>
@@ -27,6 +27,6 @@
   <include file="$(find turtlebot_lane_following)/launch/turtlebot3_lane_controller.launch"/>
 
   <!-- remote bringup -->
-  <include machine="turtlebot3" file="$(find turtlebot_bringup)/launch/turtlebot3_robot.launch"/>
+  <include machine="ubuntu" file="$(find turtlebot_bringup)/launch/turtlebot3_robot.launch"/>
 
 </launch>
